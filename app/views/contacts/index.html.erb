@@ -1,0 +1,12 @@
+<h1>Contacts#index</h1>
+
+<%= form_tag contacts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<% for contact in @contacts %>
+	<p><%= contact.name %> | <%= contact.email %></p>
+<% end %>
